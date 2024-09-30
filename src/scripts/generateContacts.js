@@ -2,7 +2,7 @@ import { createFakeContact } from "../utils/createFakeContact.js";
 import { readContacts } from "../utils/readContacts.js";
 import { writeContacts } from "../utils/writeContacts.js";
 
-const generateContacts = async (number) => {
+export const generateContacts = async (number) => {
   try {
     let contactsDB = [];
     const data = await readContacts();
@@ -14,7 +14,7 @@ const generateContacts = async (number) => {
 
     await writeContacts(JSON.stringify(contactsDB, undefined, 2));
   } catch (error) {
-    console.log('Print error:', error);
+    console.log(error);
   }
 };
 
